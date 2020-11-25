@@ -142,7 +142,7 @@
 
                     <div data-aos="zoom-out">
 
-                        <h1>Aplikasi Penunjang UMKM <span>IKI Online</span></h1>
+                        <h1>Aplikasi Penunjang UMKM <span>IKI-Online</span></h1>
 
                         <h2>Dari dan untuk kita semua</h2>
 
