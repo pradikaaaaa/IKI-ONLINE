@@ -40,14 +40,7 @@
 
                             Terakhir diubah pada : <?= date('d-m-Y H:i', strtotime($data_warung['updated_at'])) ?>
 
-                            <div class="form-group">
-                                <label for="">Nama Pemilik</label>
-                                <input type="text" name="namapemilik" id="input" class="form-control" value="<?= $data_warung['namapemilik'] ?>" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" readonly>
-                            </div>
+
                             <div class="form-group">
                                 <label for="">Nama Warung</label>
                                 <input type="text" name="namawarung" id="input" class="form-control" value="<?= $data_warung['namatoko'] ?>" required="required">
@@ -56,6 +49,10 @@
                                 <label for="">NIB</label>
                                 <input type="text" name="nib" id="input" value="<?= $data_warung['nib'] ?>" class="form-control">
                                 <label for="">*bisa dikosongkan</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="">No Handphone Warung</label>
+                                <input type="number" name="nohpwarung" class="form-control" value="<?= $data_warung['no_hp_warung'] ?>" onKeyPress="if(this.value.length==12) return false;" required=" required">
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Sales</label>
@@ -81,13 +78,57 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat</label>
-                                <textarea name="alamat" class="form-control" id="" cols="30" rows="10" required><?= $data_warung['alamat'] ?></textarea>
+                                <textarea name="alamat_warung" class="form-control" id="" cols="30" rows="10" required><?= $data_warung['alamat_warung'] ?></textarea>
                             </div>
 
 
+                            <div class="form-group">
+                                <label for="">Nama Pemilik</label>
+                                <input type="text" name="namapemilik" id="input" class="form-control" value="<?= $data_warung['namapemilik'] ?>" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">NIK</label>
+                                <input type="number" name="nik" class="form-control" value="<?= $data_warung['nik'] ?>" onKeyPress="if(this.value.length==16) return false;" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">No Handphone Pribadi</label>
+                                <input type="number" name="nohppribadi" class="form-control" value="<?= $data_warung['no_hp_pemilik'] ?>" onKeyPress="if(this.value.length==12) return false;" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Alamat Pribadi</label>
+                                <textarea name="alamat_pribadi" class="form-control" id="alamat_pribadi" cols="30" rows="10" required><?= $data_warung['alamat_warung'] ?></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <a href="#" data-toggle="modal" data-target="#ModalPassword">Ubah Password</a>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="<?= $data_warung['fotoktp'] ?>" class="img-thumbnail" width="550px">
+                                </div>
+                                <div class="col-lg-6">
+                                    <img src="<?= $data_warung['fotowarung'] ?>" class="img-thumbnail" width="550px">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-lg-6">
+                                    <a href="#" data-toggle="modal" data-target="#ModalFotoKTP">Ubah Foto KTP</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="#" data-toggle="modal" data-target="#ModalFotoWarung">Ubah Foto Warung</a>
+                                </div>
+                            </div>
+
+                            <br>
 
                             <button type="submit" class="btn btn-primary">Edit</button>
-                            <a class="btn btn-info" href="<?= site_url('C_Ojek/') ?>">Kembali</a>
+                            <a class="btn btn-info" href="#">Kembali</a>
                             </form>
 
 
@@ -111,6 +152,101 @@
     </div>
     <!-- End of Page Wrapper -->
 
+
+    <!-- Modal Password -->
+    <div class="modal fade" id="ModalPassword" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ubah Password</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Masukkan Password Baru</label>
+                            <input type="password" name="password" id="input" class="form-control">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Foto KTP -->
+    <div class="modal fade" id="ModalFotoKTP" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ubah Foto KTP</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <?= form_open_multipart('C_Warung/edit_foto_ktp') ?>
+                    <input type="hidden" name="id" value="<?= $id ?>" id="">
+                    <input type="hidden" name="nama" value="<?= $data_warung['namapemilik'] ?>" id="">
+
+                    <div>
+                        <img src="<?= base_url() ?>assets/img/default.png" class="img-thumbnail img-preview-ktp" width="150px">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Foto KTP</label>
+                        <input type="file" name="foto_ktp" id="foto_ktp" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFotoKTP()">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Foto Warung -->
+    <div class="modal fade" id="ModalFotoWarung" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ubah Foto Warung</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <?= form_open_multipart('C_Warung/edit_foto_warung') ?>
+                    <input type="hidden" name="id" value="<?= $id ?>" id="">
+                    <input type="hidden" name="nama" value="<?= $data_warung['namapemilik'] ?>" id="">
+                    <div>
+                        <img src="<?= base_url() ?>assets/img/default.png" class="img-thumbnail img-preview" width="150px">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Foto Depan Warung</label>
+                        <input type="file" name="foto_warung" id="foto" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFoto()">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -120,6 +256,22 @@
 
     <!-- file-js -->
     <?php $this->load->view('core/js'); ?>
+    <script>
+        function prevFotoKTP() {
+            const gambar = document.querySelector('#foto-ktp');
+            // const gambarLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview-ktp');
+
+            // gambarLabel.textContent = gambar.files[0].name;
+
+            const fileGambar = new FileReader();
+            fileGambar.readAsDataURL(foto_ktp.files[0]);
+
+            fileGambar.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
 
 </body>
 

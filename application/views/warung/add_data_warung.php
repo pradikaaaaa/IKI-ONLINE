@@ -38,26 +38,17 @@
                             <?= form_open_multipart('C_Warung/add_data') ?>
 
                             <div class="form-group">
-                                <label for="">Nama Pemilik</label>
-                                <input type="text" name="namapemilik" id="input" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" name="email" id="input" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="password" name="password" class="form-control" id="myInput" required="required">
-                                <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password
-                            </div>
-                            <div class="form-group">
                                 <label for="">Nama Warung</label>
-                                <input type="text" name="namawarung" id="input" class="form-control" required="required">
+                                <input type="text" name="namawarung" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">NIB</label>
-                                <input type="text" name="nib" id="input" class="form-control">
+                                <input type="text" name="nib" class="form-control">
                                 <label for="">*bisa dikosongkan</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="">No Handphone Warung</label>
+                                <input type="number" name="nohpwarung" class="form-control" onKeyPress="if(this.value.length==12) return false;" required=" required">
                             </div>
 
                             <div class="form-group">
@@ -74,24 +65,60 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Latitude</label>
-                                <input type="text" name="lat" id="input" class="form-control" required="required">
+                                <input type="text" name="lat" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Longitude</label>
-                                <input type="text" name="long" id="input" class="form-control" required="required">
+                                <input type="text" name="long" id="long" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label for="">Alamat</label>
-                                <textarea name="alamat" class="form-control" id="" cols="30" rows="10" required></textarea>
+                                <label for="">Alamat Warung</label>
+                                <textarea name="alamat_warung" class="form-control" cols="30" rows="10" required></textarea>
                             </div>
+
+                            <div class="form-group">
+                                <label for="">Nama Pemilik</label>
+                                <input type="text" name="namapemilik" id="nama_pemilik" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">NIK</label>
+                                <input type="number" name="nik" class="form-control" onKeyPress="if(this.value.length==16) return false;" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">No Handphone Pribadi</label>
+                                <input type="number" name="nohppribadi" class="form-control" onKeyPress="if(this.value.length==12) return false;" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Alamat Pribadi</label>
+                                <textarea name="alamat_pribadi" class="form-control" id="alamat_pribadi" cols="30" rows="10" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" name="email" id="inputEmail" class="form-control" onchange="generatePass()" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="password" name="password" class="form-control" id="myInput" required="required">
+                                <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password
+                            </div>
+
+
+                            <div>
+                                <img src="../../assets/img/default.png" class="img-thumbnail img-preview-ktp" width="150px">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Foto KTP</label>
+                                <input type="file" name="foto_ktp" id="foto_ktp" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFotoKTP()">
+                            </div>
+
                             <div>
                                 <img src="../../assets/img/default.png" class="img-thumbnail img-preview" width="150px">
                             </div>
                             <div class="form-group">
-                                <label for="">Upload Foto Profil</label>
-                                <input type="file" name="foto_warung" id="foto" class="form-control" required="required" onchange="prevFoto()">
+                                <label for="">Foto Depan Warung</label>
+                                <input type="file" name="foto_warung" id="foto" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFoto()">
                             </div>
-
 
 
                             <button type="submit" class="btn btn-primary">Tambah</button>
@@ -136,6 +163,34 @@
                 x.type = "text";
             } else {
                 x.type = "password";
+            }
+        }
+
+        function generatePass() {
+            var nama = document.getElementById("nama_pemilik").value;
+            var long = document.getElementById("long").value;
+
+
+            var _nama = nama.substring(0, 4);
+            var _long = long.substring(long.length - 4, long.length);
+            // var _imei = imei.substring(11, 15);
+
+            document.getElementById("myInput").value = _long + _nama;
+
+        }
+
+        function prevFotoKTP() {
+            const gambar = document.querySelector('#foto-ktp');
+            // const gambarLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview-ktp');
+
+            // gambarLabel.textContent = gambar.files[0].name;
+
+            const fileGambar = new FileReader();
+            fileGambar.readAsDataURL(foto_ktp.files[0]);
+
+            fileGambar.onload = function(e) {
+                imgPreview.src = e.target.result;
             }
         }
     </script>
