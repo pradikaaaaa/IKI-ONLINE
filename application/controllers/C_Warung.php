@@ -240,20 +240,20 @@ class C_Warung extends CI_Controller
 
     public function edit_foto_warung()
     {
-        $nama = $this->input->post('nama');
+        $namawarung = $this->input->post('nama');
         $idUser = $this->input->post('id');
 
         $db  = $this->firebase->getDatabase();
         $storage = $this->firebase->getStorage();
         $bucket = $storage->getBucket();
 
-        //rename foto ktp
-        $foto_warung = str_replace(" ", "-", $nama);
+        //rename foto warung
+        $foto_warung = str_replace(" ", "-", $namawarung);
         $filename = $_FILES["foto_warung"]["name"];
         $tmp = explode('.', $filename);
         $ext = end($tmp);
 
-        $new_name_warung = 'ktp-' . $foto_warung . '.' . $ext;
+        $new_name_warung = 'warung-' . $foto_warung . '.' . $ext;
         $bucket->upload(
             file_get_contents($_FILES['foto_warung']['tmp_name']),
             [
@@ -263,10 +263,10 @@ class C_Warung extends CI_Controller
 
         $url = "https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/";
 
-        $nama_foto_ktp = $url . 'Warung%2f' . $idUser . '%2fdaftar%2f' . $new_name_warung . "?alt=media&token=";
+        $nama_foto_warung = $url . 'Warung%2f' . $idUser . '%2fdaftar%2f' . $new_name_warung . "?alt=media&token=";
 
         $data = [
-            'fotowarung' => $nama_foto_ktp,
+            'fotowarung' => $nama_foto_warung,
             'updated_at' => date("Y-m-d H:i:s")
         ];
         $ref = "Pandaan/Akun_Resto/" . $idUser;

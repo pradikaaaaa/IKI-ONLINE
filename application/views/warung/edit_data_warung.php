@@ -228,7 +228,7 @@
 
                     <?= form_open_multipart('C_Warung/edit_foto_warung') ?>
                     <input type="hidden" name="id" value="<?= $id ?>" id="">
-                    <input type="hidden" name="nama" value="<?= $data_warung['namapemilik'] ?>" id="">
+                    <input type="hidden" name="nama" value="<?= $data_warung['namatoko'] ?>" id="">
                     <div>
                         <img src="<?= base_url() ?>assets/img/default.png" class="img-thumbnail img-preview" width="150px">
                     </div>
