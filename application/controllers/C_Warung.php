@@ -148,7 +148,7 @@ class C_Warung extends CI_Controller
                 '1' => floatval($long)
             ];
 
-            $this->load->library('geofire');
+            $this->load->library('GeoFire');
             $lokasi = [
                 'g' => $this->geofire->generate($lat, $long),
                 'l' => $l

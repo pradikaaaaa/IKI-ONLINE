@@ -142,13 +142,13 @@
 
                     <div data-aos="zoom-out">
 
-                        <h1>Aplikasi Penunjang UMKM <span>IKI-Online</span></h1>
+                        <h1>Aplikasi Penunjang UMKM <span>IKI Online</span></h1>
 
                         <h2>Dari dan untuk kita semua</h2>
 
                         <div class="text-center text-lg-left">
 
-                            <a href="#about" class="btn-get-started scrollto">Unduh Aplikasi</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.alfanshter.IKICostumer" class="btn-get-started scrollto">Unduh Aplikasi</a>
 
                             <img src="<?= base_url() ?>assets/img/get.png" width="150px">
 
@@ -755,7 +755,7 @@
 
                                 <h4>Wiwit Nugroho</h4>
 
-                                <span>CEO</span>
+                                <span>Commissioner</span>
 
                                 <div class="social">
 
@@ -791,11 +791,11 @@
 
                                 <div class="social">
 
-                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href="https://twitter.com/KlamMudzi"><i class="icofont-twitter"></i></a>
 
-                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.facebook.com/tur.mudzi.31"><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/mas.yaqin.pasuruan/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
@@ -823,11 +823,11 @@
 
                                 <div class="social">
 
-                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href="https://twitter.com/wahyudi_iskanda"><i class="icofont-twitter"></i></a>
 
-                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.facebook.com/Trezz.die.heart"><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/wahyudi.blackhat/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
@@ -859,7 +859,7 @@
 
                                     <a href=""><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/ach.denny/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
@@ -875,7 +875,7 @@
 
                 </div>
 
-                <div class="row" data-aos="fade-left" style="margin-top:20px;">
+                <div class="row" data-aos="fade-left" style="margin-top:3rem!important;">
 
 
 
@@ -893,11 +893,11 @@
 
                                 <div class="social">
 
-                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href="https://twitter.com/yerinspire"><i class="icofont-twitter"></i></a>
 
-                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.facebook.com/yeripratama.yeri"><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/yerinspire/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
@@ -925,11 +925,144 @@
 
                                 <div class="social">
 
+                                    <a href="https://twitter.com/alfanno8"><i class="icofont-twitter"></i></a>
+
+                                    <a href="https://www.facebook.com/mukhammad1"><i class="icofont-facebook"></i></a>
+
+                                    <a href="https://www.instagram.com/alfanshter_developers/"><i class="icofont-instagram"></i></a>
+
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+
+                        <div class="member" data-aos="zoom-in" data-aos-delay="300">
+
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-5.jpg" class="img-fluid" alt=""></div>
+
+                            <div class="member-info">
+
+                                <h4>Hasan Basri</h4>
+
+                                <span>Management Technology, <br>Support System & Information</span>
+
+                                <div class="social">
+
+                                    <a href=""><i class="icofont-twitter"></i></a>
+
+                                    <a href="https://www.facebook.com/hasan.basri1609/"><i class="icofont-facebook"></i></a>
+
+                                    <a href="https://www.instagram.com/hasan_basri0/"><i class="icofont-instagram"></i></a>
+
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+
+                        <div class="member" data-aos="zoom-in" data-aos-delay="400">
+
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+
+                            <div class="member-info">
+
+                                <h4>Yahya Dwi Pradika</h4>
+
+                                <span>Management Technology, <br>Support System & Information</span>
+
+                                <div class="social">
+
                                     <a href=""><i class="icofont-twitter"></i></a>
 
                                     <a href=""><i class="icofont-facebook"></i></a>
 
                                     <a href=""><i class="icofont-instagram"></i></a>
+
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="row" data-aos="fade-left" style="margin-top:3rem!important;">
+
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="member" data-aos="zoom-in" data-aos-delay="100">
+
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+
+                            <div class="member-info">
+
+                                <h4>Niswah Mussayyadatul Ghina</h4>
+
+                                <span>Management Administration</span>
+
+                                <div class="social">
+
+                                    <a href=""><i class="icofont-twitter"></i></a>
+
+                                    <a href="https://www.facebook.com/niswahnadia.mafaza"><i class="icofont-facebook"></i></a>
+
+                                    <a href="https://www.instagram.com/niswah_mg"><i class="icofont-instagram"></i></a>
+
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+
+                        <div class="member" data-aos="zoom-in" data-aos-delay="200">
+
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+
+                            <div class="member-info">
+
+                                <h4>Moch. Badrun Nafi' Udin</h4>
+
+                                <span>Adminsitration & Operation</span>
+                                <div class="social">
+
+                                    <a href="https://twitter.com/Bangban06866651"><i class="icofont-twitter"></i></a>
+
+                                    <a href="https://www.facebook.com/wiji.thukul.7967"><i class="icofont-facebook"></i></a>
+
+                                    <a href="https://www.instagram.com/bangbang1261/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
@@ -1006,77 +1139,6 @@
                     </div>
 
 
-
-                </div>
-
-                <div class="row" data-aos="fade-left" align="center" style="margin-top:20px;">
-
-
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-
-                        <div class="member" data-aos="zoom-in" data-aos-delay="400">
-
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
-
-                            <div class="member-info">
-
-                                <h4>Dion Indra Cahyo</h4>
-
-                                <span>Management Finance</span>
-
-                                <div class="social">
-
-                                    <a href=""><i class="icofont-twitter"></i></a>
-
-                                    <a href=""><i class="icofont-facebook"></i></a>
-
-                                    <a href=""><i class="icofont-instagram"></i></a>
-
-                                    <a href=""><i class="icofont-linkedin"></i></a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-
-                        <div class="member" data-aos="zoom-in" data-aos-delay="400">
-
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-7.jpg" class="img-fluid" alt=""></div>
-
-                            <div class="member-info">
-
-                                <h4>Moch. Badrun Nafi' Udin</h4>
-
-                                <span>Adminitration & Operation</span>
-
-                                <div class="social">
-
-                                    <a href=""><i class="icofont-twitter"></i></a>
-
-                                    <a href=""><i class="icofont-facebook"></i></a>
-
-                                    <a href=""><i class="icofont-instagram"></i></a>
-
-                                    <a href=""><i class="icofont-linkedin"></i></a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
                 </div>
 
 
@@ -1135,7 +1197,7 @@
 
                                 <h4>Email:</h4>
 
-                                <p>sinarmudakreatif.pt@gmail.com</p>
+                                <p>sinarmudakreatif@ikionline.id</p>
 
                             </div>
 
@@ -1259,13 +1321,15 @@
 
                             <p>
 
-                                Nampes, gang IV, Pandaan, <br>
-
-                                Pasuruan<br><br>
+                                Jl.Yai Hamzah No.2, Dsn.Nogosari
+                                <br>
+                                Ds.Nampes, gang IV,
+                                <br>
+                                Kec. Pandaan, Kab. Pasuruan<br><br>
 
                                 <strong>Telepon:</strong> (0343) 6744848<br>
 
-                                <strong>Email:</strong> sinarmudakreatif.pt@gmail.com<br>
+                                <strong>Email:</strong> sinarmudakreatif@ikionline.id<br>
 
                             </p>
 
@@ -1355,7 +1419,7 @@
 
             <div class="copyright">
 
-                &copy;<strong><span><?= date('Y') ?> IKI-Online</span></strong>
+                &copy;<strong><span><?= date('Y') ?> IKI Online</span></strong>
 
                 <br>All Rights Reserved
 
