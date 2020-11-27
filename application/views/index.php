@@ -749,13 +749,13 @@
 
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
 
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-2.1.jpg" class="img-fluid" alt=""></div>
 
                             <div class="member-info">
 
                                 <h4>Wiwit Nugroho</h4>
 
-                                <span>Commissioner</span>
+                                <span>CEO</span>
 
                                 <div class="social">
 
@@ -763,7 +763,7 @@
 
                                     <a href=""><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/wiwit.nugroho/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
@@ -787,7 +787,7 @@
 
                                 <h4>Muhammad Ainul Yaqin</h4>
 
-                                <span>Direktur</span>
+                                <span>Director</span>
 
                                 <div class="social">
 
@@ -883,7 +883,7 @@
 
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
 
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-8.jpg" class="img-fluid" alt=""></div>
 
                             <div class="member-info">
 
@@ -947,7 +947,7 @@
 
                         <div class="member" data-aos="zoom-in" data-aos-delay="300">
 
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-5.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-9.jpg" class="img-fluid" alt=""></div>
 
                             <div class="member-info">
 
@@ -979,7 +979,7 @@
 
                         <div class="member" data-aos="zoom-in" data-aos-delay="400">
 
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-10.jpg" class="img-fluid" alt=""></div>
 
                             <div class="member-info">
 
@@ -989,13 +989,13 @@
 
                                 <div class="social">
 
-                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href="https://twitter.com/defuzzifikasi"><i class="icofont-twitter"></i></a>
 
-                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.facebook.com/yahya.pradika/"><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/pradikaaaaa/"><i class="icofont-instagram"></i></a>
 
-                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/yahya-dwi-pradika-65779b16a/"><i class="icofont-linkedin"></i></a>
 
                                 </div>
 
@@ -1049,7 +1049,7 @@
 
                         <div class="member" data-aos="zoom-in" data-aos-delay="200">
 
-                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="<?= base_url() ?>assets/img/team/team-7.jpg" class="img-fluid" alt=""></div>
 
                             <div class="member-info">
 
@@ -1116,17 +1116,17 @@
 
                             <div class="member-info">
 
-                                <h4>Niswah Mussayyadatul Ghina</h4>
+                                <h4>Greaffith Vidta Sofyan</h4>
 
-                                <span>Management Administration</span>
+                                <span>Spv Marketing Area</span>
 
                                 <div class="social">
 
-                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href="https://twitter.com/GreaffithSofyan"><i class="icofont-twitter"></i></a>
 
-                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.facebook.com/greaffithvidta.sofyan"><i class="icofont-facebook"></i></a>
 
-                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href="https://www.instagram.com/Greaffith_sofyan/"><i class="icofont-instagram"></i></a>
 
                                     <a href=""><i class="icofont-linkedin"></i></a>
 
