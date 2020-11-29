@@ -39,7 +39,7 @@
 
                             <div class="form-group">
                                 <label for="">NIK</label>
-                                <input type="text" name="nik" id="input" class="form-control" required="required">
+                                <input type="number" name="nik" class="form-control" onKeyPress="if(this.value.length==16) return false;" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Nama</label>
@@ -60,11 +60,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="">No Handphone</label>
-                                <input type="text" name="nohp" id="input" class="form-control" required="required">
+                                <input type="text" name="nohp" id="input" class="form-control" onKeyPress="if(this.value.length==12) return false;" required="required">
                             </div>
                             <div class=" form-group">
                                 <label for="">Area</label>
                                 <input type="text" name="area" id="input" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Alamat Pribadi</label>
+                                <textarea name="alamat_pribadi" class="form-control" id="alamat_pribadi" cols="30" rows="10" required></textarea>
                             </div>
                             <div>
                                 <img src="../../assets/img/default.png" class="img-thumbnail img-preview" width="150px">

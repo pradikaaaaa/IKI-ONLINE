@@ -59,9 +59,9 @@
                                                     <td><?= $value['area'] ?></td>
 
                                                     <td>
-                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal<?= $key ?>">
-                                                            Detail
-                                                        </button>
+                                                        <a class="btn view_warung btn-info btn-sm" href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal<?= $key ?>"><i class="fas fa-fw fa-eye"></i></a>
+                                                        <a class="btn btn-warning btn-sm" href="<?= site_url('C_Sales/form_edit/' . $key) ?>"><i class="fas fa-fw fa-edit"></i></a>
+                                                        <a class="btn btn-danger btn-sm" href="<?= site_url('C_Sales/delete_data/' . $key) ?>"><i class="fas fa-fw fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                         <?php }
@@ -96,32 +96,26 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="card-group">
-                                        <div class="card">
-                                            <br>
-                                            <img class="card-img-top" src="<?= $value['foto'] ?>" alt="Card image cap" style="width: 150px; margin-left: auto; margin-right: auto;">
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="text-transform: camelcase;"><?= $value['nama'] ?></h5>
-                                                <div class="row">
-                                                    <div class="col-3">
-                                                        <p class="card-text">Email</p>
-                                                        <p class="card-text">No.Hp</p>
-                                                        <p class="card-text">Area</p>
-                                                    </div>
-                                                    <div class="col">
-                                                        <p class="card-text">: <?= $value['email'] ?></p>
-                                                        <p class="card-text">: <?= $value['notlpn'] ?></p>
-                                                        <p class="card-text">: <?= $value['area'] ?></p>
-                                                    </div>
-                                                </div>
+                                    <img class="card-img-top" src="<?= $value['foto'] ?>" alt="Card image cap" style="width: 150px; margin-left: auto; margin-right: auto;">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="text-transform: camelcase;"><?= $value['nama'] ?></h5>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <p class="card-text">Email</p>
+                                                <p class="card-text">No.Hp</p>
+                                                <p class="card-text">Area</p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="card-text">: <?= $value['email'] ?></p>
+                                                <p class="card-text">: <?= $value['notlpn'] ?></p>
+                                                <p class="card-text">: <?= $value['area'] ?></p>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                    <a class="btn btn-warning" href="<?= site_url('C_Sales/form_edit/' . $key) ?>">Edit</a>
-                                    <a class="btn btn-danger" href="<?= site_url('C_Sales/delete_data/' . $key) ?>">Hapus</a>
                                 </div>
                             </div>
                         </div>

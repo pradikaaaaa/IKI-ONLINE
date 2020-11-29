@@ -38,6 +38,8 @@
                             <?= form_open('C_Sales/edit_data') ?>
 
                             <input type="hidden" name="id" value="<?= $id ?>">
+                            Terakhir diubah pada : <?= date('d-m-Y H:i', strtotime($data_sales['updated_at'])) ?>
+
                             <div class="form-group">
                                 <label for="">NIK</label>
                                 <input type="text" name="nik" id="input" value="<?= $data_sales['nik'] ?>" class="form-control" required="required">
@@ -71,6 +73,23 @@
                                 <label for="">Area</label>
                                 <input type="text" name="area" id="input" value="<?= $data_sales['area'] ?>" class="form-control" required="required">
                             </div>
+                            <div class="form-group">
+                                <label for="">Alamat Pribadi</label>
+                                <textarea name="alamat_pribadi" class="form-control" id="alamat_pribadi" cols="30" rows="10" required><?= $data_sales['alamat'] ?></textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="<?= $data_sales['foto'] ?>" class="img-thumbnail" width="250px">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-lg-6">
+                                    <a href="#" data-toggle="modal" data-target="#ModalFoto">Ubah Foto Sales</a>
+                                </div>
+                            </div>
+
+                            <br>
 
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a class="btn btn-info" href="<?= site_url('C_Sales/') ?>">Kembali</a>
@@ -96,6 +115,41 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
+    <!-- Modal Foto KTP -->
+    <div class="modal fade" id="ModalFoto" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ubah Foto Sales</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <?= form_open_multipart('C_Sales/edit_foto_sales') ?>
+                    <input type="hidden" name="id" value="<?= $id ?>" id="">
+                    <input type="hidden" name="nama" value="<?= $data_sales['nama'] ?>" id="">
+
+                    <div>
+                        <img src="<?= base_url() ?>assets/img/default.png" class="img-thumbnail img-preview" width="150px">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Foto Sales</label>
+                        <input type="file" name="foto_sales" id="foto" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFoto()">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
