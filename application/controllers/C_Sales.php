@@ -51,32 +51,39 @@ class C_Sales extends CI_Controller
         $email = $this->input->post('email');
         $area = $this->input->post('area');
         $alamat = $this->input->post('alamat_pribadi');
+        $foto = $this->input->post('foto_sales');
+
 
 
         $db  = $this->firebase->getDatabase();
         $storage = $this->firebase->getStorage();
         $bucket = $storage->getBucket();
 
-        //rename foto
-        $foto_sales = str_replace(" ", "-", $nama);
-        $filename = $_FILES["foto_sales"]["name"];
-        $tmp = explode('.', $filename);
-        $ext = end($tmp);
+        if (!empty($foto)) {
+            //rename foto
+            $foto_sales = str_replace(" ", "-", $nama);
+            $filename = $_FILES["foto_sales"]["name"];
+            $tmp = explode('.', $filename);
+            $ext = end($tmp);
+        }
 
         $ref = "Pandaan/Akun_Sales";
         $key = $db->getReference($ref)->push()->getKey();
 
-        $new_name_sales = 'sales-' . $foto_sales . '.' . $ext;
-        $bucket->upload(
-            file_get_contents($_FILES['foto_sales']['tmp_name']),
-            [
-                'name' => 'Sales/' . $key . '/foto/' . $new_name_sales
-            ]
-        );
+        if (!empty($foto)) {
+            $new_name_sales = 'sales-' . $foto_sales . '.' . $ext;
+            $bucket->upload(
+                file_get_contents($_FILES['foto_sales']['tmp_name']),
+                [
+                    'name' => 'Sales/' . $key . '/foto/' . $new_name_sales
+                ]
+            );
 
-        $url = "https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/";
-        $nama_foto = $url . 'Sales%2f' . $key . "%2ffoto%2f" . $new_name_sales . "?alt=media&token=";
-
+            $url = "https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/";
+            $nama_foto = $url . 'Sales%2f' . $key . "%2ffoto%2f" . $new_name_sales . "?alt=media&token=";
+        } else {
+            $nama_foto = 'https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/default%2Flogosales.png?alt=media&token=';
+        }
 
 
         $data = [

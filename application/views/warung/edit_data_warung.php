@@ -102,6 +102,11 @@
                                 <label for="">Email</label>
                                 <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" readonly>
                             </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="password" name="password" class="form-control" id="myInput" value="<?= $data_warung['password'] ?>" required="required" disabled>
+                                <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password
+                            </div>
 
                             <div class="form-group">
                                 <a href="#" data-toggle="modal" data-target="#ModalPassword">Ubah Password</a>
@@ -257,6 +262,15 @@
     <!-- file-js -->
     <?php $this->load->view('core/js'); ?>
     <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
         function prevFotoKTP() {
             const gambar = document.querySelector('#foto-ktp');
             // const gambarLabel = document.querySelector('.custom-file-label');

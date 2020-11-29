@@ -65,11 +65,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Latitude</label>
-                                <input type="text" name="lat" class="form-control" required="required">
+                                <input type="text" name="lat" id="lat" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Longitude</label>
                                 <input type="text" name="long" id="long" class="form-control" required="required">
+                                <input type="checkbox" onclick="myKoordinat()" style="margin-top: 10px;"> Default Koordinat
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat Warung</label>
@@ -177,6 +178,11 @@
 
             document.getElementById("myInput").value = _long + _nama;
 
+        }
+
+        function myKoordinat() {
+            document.getElementById("lat").value = -7.6414489;
+            document.getElementById("long").value = 112.698348;
         }
 
         function prevFotoKTP() {

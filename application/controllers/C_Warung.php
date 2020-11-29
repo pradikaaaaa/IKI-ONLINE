@@ -148,7 +148,7 @@ class C_Warung extends CI_Controller
                 '1' => floatval($long)
             ];
 
-            $this->load->library('GeoFire');
+            $this->load->library('Geofire');
             $lokasi = [
                 'g' => $this->geofire->generate($lat, $long),
                 'l' => $l
@@ -197,8 +197,21 @@ class C_Warung extends CI_Controller
             'nib' => $nib,
             'updated_at' => date("Y-m-d H:i:s")
         ];
+
+        $l = [
+            '0' => floatval($lat),
+            '1' => floatval($long)
+        ];
+
+        $this->load->library('Geofire');
+        $lokasi = [
+            'g' => $this->geofire->generate($lat, $long),
+            'l' => $l
+        ];
+
         $ref = "Pandaan/Akun_Resto/" . $idUser;
         $db->getReference($ref)->update($data);
+        $db->getReference('Pandaan/LokasiToko/' . $idUser)->update($lokasi);
         redirect('C_Warung', 'refresh');
     }
 
@@ -264,6 +277,7 @@ class C_Warung extends CI_Controller
         $url = "https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/";
 
         $nama_foto_warung = $url . 'Warung%2f' . $idUser . '%2fdaftar%2f' . $new_name_warung . "?alt=media&token=";
+
 
         $data = [
             'fotowarung' => $nama_foto_warung,

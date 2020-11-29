@@ -75,7 +75,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Upload Foto Profil</label>
-                                <input type="file" name="foto_sales" id="foto" class="form-control" accept="image/png, image/jpeg" required="required" onchange="prevFoto()">
+                                <input type="file" name="foto_sales" id="foto" class="form-control" accept="image/png, image/jpeg" onchange="prevFoto()">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Tambah</button>
