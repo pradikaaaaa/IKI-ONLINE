@@ -156,12 +156,12 @@ class C_Warung extends CI_Controller
 
             $resto = [
                 'gambar' => $nama_foto_warung,
-                'harga' => 0,
+                'harga' => "0",
                 'id' => $idUser,
                 'kode_sales' => $sales,
                 'latitude' => $lat,
                 'longitude' => $long,
-                'nama' => null,
+                'nama' => "",
                 'penjual' => $namawarung,
                 'status' => "Tutup"
             ];
