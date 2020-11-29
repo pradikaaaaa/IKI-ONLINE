@@ -154,10 +154,22 @@ class C_Warung extends CI_Controller
                 'l' => $l
             ];
 
+            $resto = [
+                'gambar' => $nama_foto_warung,
+                'harga' => 0,
+                'id' => $idUser,
+                'kode_sales' => $sales,
+                'latitude' => $lat,
+                'longitude' => $long,
+                'nama' => null,
+                'penjual' => $namawarung,
+                'status' => "Tutup"
+            ];
+
             $ref = "Pandaan/Akun_Resto/" . $idUser;
             $db->getReference($ref)->set($data);
             $db->getReference('Pandaan/LokasiToko/' . $idUser)->set($lokasi);
-
+            $db->getReference('Pandaan/Resto/' . $idUser)->set($resto);
             //kirim ke email
             // $this->send_email();
             redirect('C_Warung', 'refresh');
@@ -209,9 +221,19 @@ class C_Warung extends CI_Controller
             'l' => $l
         ];
 
+        $resto = [
+            'id' => $idUser,
+            'kode_sales' => $sales,
+            'latitude' => $lat,
+            'longitude' => $long,
+            'penjual' => $namawarung,
+            'status' => "Tutup"
+        ];
+
         $ref = "Pandaan/Akun_Resto/" . $idUser;
         $db->getReference($ref)->update($data);
         $db->getReference('Pandaan/LokasiToko/' . $idUser)->update($lokasi);
+        $db->getReference('Pandaan/Resto/' . $idUser)->set($resto);
         redirect('C_Warung', 'refresh');
     }
 
