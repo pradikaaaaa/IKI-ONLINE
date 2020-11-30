@@ -367,7 +367,7 @@ class C_Warung extends CI_Controller
         );
 
         $send = $this->mailer->send($sendmail);
-        echo $send;
+        var_dump($send);
     }
 
     public function cek_email()
