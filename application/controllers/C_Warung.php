@@ -170,8 +170,9 @@ class C_Warung extends CI_Controller
             $db->getReference($ref)->set($data);
             $db->getReference('Pandaan/LokasiToko/' . $idUser)->set($lokasi);
             $db->getReference('Pandaan/Resto/' . $idUser)->set($resto);
+
             //kirim ke email
-            // $this->send_email();
+            $this->send_email();
             redirect('C_Warung', 'refresh');
         }
     }

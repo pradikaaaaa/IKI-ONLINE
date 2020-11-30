@@ -397,7 +397,11 @@
                             </tr>
                         </table>
                         <br>
-                        <p style="text-align:center"><img src="https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/Email%2Funduh.png?alt=media&token=" style="width:200px"><br><i>Unduh Aplikasi di Playstore</i></p>
+                        <p style="text-align:center">
+                            <a href="https://play.google.com/store/apps/details?id=com.alfanshter.IKI_Warung" target="_blank">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/Email%2Funduh.png?alt=media&token=" style="width:200px">
+                            </a>
+                            <br><i>Unduh Aplikasi di Playstore</i></p>
                     </td>
                 </tr>
                 <!-- end tr -->
@@ -431,7 +435,7 @@
             </tr><!-- end: tr -->
             <tr>
                 <td class="bg_white" style="text-align: center;">
-                    <p>Copyright <a href="#" style="color: rgba(0,0,0,.8);">www.ikionline.com</a></p>
+                    <p>Copyright <a href="https://ikionline.id/" style="color: rgba(0,0,0,.8);">www.ikionline.id</a></p>
                 </td>
             </tr>
             </table>
