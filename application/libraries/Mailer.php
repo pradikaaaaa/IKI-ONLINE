@@ -61,7 +61,7 @@ class Mailer
 
         $mail->SMTPSecure = 'ssl';
 
-        // $mail->SMTPDebug = 1; // Aktifkan untuk melakukan debugging
+        $mail->SMTPDebug = 1; // Aktifkan untuk melakukan debugging
 
         $mail->SMTPOptions = array(
 

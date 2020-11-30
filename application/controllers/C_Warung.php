@@ -173,7 +173,7 @@ class C_Warung extends CI_Controller
 
             //kirim ke email
             $this->send_email();
-            redirect('C_Warung', 'refresh');
+            // redirect('C_Warung', 'refresh');
         }
     }
 
