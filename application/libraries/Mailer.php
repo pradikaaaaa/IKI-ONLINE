@@ -14,11 +14,11 @@ class Mailer
 
     protected $_ci;
 
-    protected $email_pengirim = 'ikionline@ikionline.id'; // Isikan dengan email pengirim
+    protected $email_pengirim = 'sinarmudakreatif.pt@gmail.com'; // Isikan dengan email pengirim
 
     protected $nama_pengirim = 'Sinar Muda Kreatif'; // Isikan dengan nama pengirim
 
-    protected $password = 'ikionlinesmk123'; // Isikan dengan password email pengirim
+    protected $password = 'yluuvioqendzcjwm'; // Isikan dengan password email pengirim
 
 
 
