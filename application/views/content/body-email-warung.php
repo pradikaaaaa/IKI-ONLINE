@@ -377,7 +377,7 @@
                         <table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="80%">
                             <tr>
                                 <th width="10%">1.</th>
-                                <td>Download Aplikasi WARUNGKU, di <i>Playstore</i></td>
+                                <td>Download Aplikasi IKI Warung, di <i>Playstore</i></td>
                             </tr>
                             <tr>
                                 <th>2.</th>
@@ -389,7 +389,7 @@
                             </tr>
                             <tr>
                                 <th>4.</th>
-                                <td>Selamat menggunakan aplikasi WARUNGKU</td>
+                                <td>Selamat menggunakan aplikasi IKI Warung</td>
                             </tr>
                             <tr>
                                 <th></th>

@@ -104,7 +104,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
-                                <input type="password" name="password" class="form-control" id="myInput" value="<?= $data_warung['password'] ?>" required="required" disabled>
+                                <input type="password" name="password" class="form-control" id="myInput" value="<?= $data_warung['password'] ?>" required="required" readonly>
                                 <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password
                             </div>
 
