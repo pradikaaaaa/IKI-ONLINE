@@ -170,13 +170,16 @@
                 </div>
                 <div class="modal-body">
 
-                    <form action="">
-                        <div class="form-group">
-                            <label for="">Masukkan Password Baru</label>
-                            <input type="password" name="password" id="input" class="form-control">
-                        </div>
+                    <?= form_open('C_Warung/edit_password') ?>
+                    <input type="hidden" name="id" value="<?= $id ?>" id="">
+                    <div class="form-group">
+                        <label for="">Masukkan Password Baru</label>
+                        <input type="password" name="password" id="pass" class="form-control">
+                        <input type="checkbox" onclick="myFunctionPass()" style="margin-top: 10px;"> Show Password
+                    </div>
                 </div>
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </form>
                 </div>
@@ -264,6 +267,15 @@
     <script>
         function myFunction() {
             var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function myFunctionPass() {
+            var x = document.getElementById("pass");
             if (x.type === "password") {
                 x.type = "text";
             } else {

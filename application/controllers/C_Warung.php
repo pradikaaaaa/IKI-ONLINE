@@ -310,6 +310,24 @@ class C_Warung extends CI_Controller
         redirect('C_Warung', 'refresh');
     }
 
+    public function edit_password()
+    {
+        $idUser = $this->input->post('id');
+        $new_pass = $this->input->post('password');
+
+        $db  = $this->firebase->getDatabase();
+        $auth = $this->firebase->getAuth();
+        $auth->changeUserPassword($idUser, $new_pass);
+
+        $data = [
+            'password' => $new_pass,
+            'updated_at' => date("Y-m-d H:i:s")
+        ];
+        $ref = "Pandaan/Akun_Resto/" . $idUser;
+        $db->getReference($ref)->update($data);
+        redirect('C_Warung', 'refresh');
+    }
+
     public function delete_data($id)
     {
         $db  = $this->firebase->getDatabase();
@@ -328,7 +346,7 @@ class C_Warung extends CI_Controller
 
     public function send_email()
     {
-        $this->load->library('mailer');
+        $this->load->library('Mailer');
 
         $email_penerima = $this->input->post('email');
         $namawarung = $this->input->post('namawarung');
