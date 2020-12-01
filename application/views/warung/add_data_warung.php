@@ -26,7 +26,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <!-- <h1 class="h3 mb-4 text-gray-800">Blank Page</h1> -->
+                    <h1 class="h3 mb-4 text-gray-800">Data Warung</h1>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -35,25 +35,22 @@
                         <div class="card-body">
 
                             <?= validation_errors() ?>
-                            <?= form_open('C_Warung/edit_data') ?>
-                            <input type="hidden" name="id" value="<?= $id ?>" id="">
-
-                            Terakhir diubah pada : <?= date('d-m-Y H:i', strtotime($data_warung['updated_at'])) ?>
-
+                            <?= form_open_multipart('C_Warung/add_data') ?>
 
                             <div class="form-group">
                                 <label for="">Nama Warung</label>
-                                <input type="text" name="namawarung" id="input" class="form-control" value="<?= $data_warung['namatoko'] ?>" required="required">
+                                <input type="text" name="namawarung" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">NIB</label>
-                                <input type="text" name="nib" id="input" value="<?= $data_warung['nib'] ?>" class="form-control">
+                                <input type="text" name="nib" class="form-control">
                                 <label for="">*bisa dikosongkan</label>
                             </div>
                             <div class="form-group">
                                 <label for="">No Handphone Warung</label>
-                                <input type="number" name="nohpwarung" class="form-control" value="<?= $data_warung['no_hp_warung'] ?>" onKeyPress="if(this.value.length==12) return false;" required=" required">
+                                <input type="number" name="nohpwarung" class="form-control" onKeyPress="if(this.value.length==12) return false;" required=" required">
                             </div>
+
                             <div class="form-group">
                                 <label for="">Nama Sales</label>
                                 <select name="sales" class="form-control" id="">
@@ -61,89 +58,78 @@
                                     <?php
                                     foreach ($data_sales as $key => $value) {
                                     ?>
-                                        <option value="<?= $key ?>" <?php if ($key == $data_warung['kode_sales']) {
-                                                                        echo "selected";
-                                                                    } ?>><?= $value['nama'] ?></option>
+                                        <option value="<?= $key ?>"><?= $value['nama'] ?></option>
 
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="">Latitude</label>
-                                <input type="text" name="lat" id="input" class="form-control" value="<?= $data_warung['latitude'] ?>" required="required">
+                                <input type="text" name="lat" id="lat" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Longitude</label>
-                                <input type="text" name="long" id="input" class="form-control" value="<?= $data_warung['longitude'] ?>" required="required">
+                                <input type="text" name="long" id="long" class="form-control" required="required">
+                                <input type="checkbox" onclick="myKoordinat()" style="margin-top: 10px;"> Default Koordinat
                             </div>
                             <div class="form-group">
-                                <label for="">Alamat</label>
-                                <textarea name="alamat_warung" class="form-control" id="" cols="30" rows="10" required><?= $data_warung['alamat_warung'] ?></textarea>
+                                <label for="">Alamat Warung</label>
+                                <textarea name="alamat_warung" class="form-control" cols="30" rows="10" required></textarea>
                             </div>
-
 
                             <div class="form-group">
                                 <label for="">Nama Pemilik</label>
-                                <input type="text" name="namapemilik" id="input" class="form-control" value="<?= $data_warung['namapemilik'] ?>" required="required">
+                                <input type="text" name="namapemilik" id="nama_pemilik" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">NIK</label>
-                                <input type="number" name="nik" class="form-control" value="<?= $data_warung['nik'] ?>" onKeyPress="if(this.value.length==16) return false;" required="required">
+                                <input type="number" name="nik" class="form-control" onKeyPress="if(this.value.length==16) return false;" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">No Handphone Pribadi</label>
-                                <input type="number" name="nohppribadi" class="form-control" value="<?= $data_warung['no_hp_pemilik'] ?>" onKeyPress="if(this.value.length==12) return false;" required="required">
+                                <input type="number" name="nohppribadi" class="form-control" onKeyPress="if(this.value.length==12) return false;" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Alamat Pribadi</label>
-                                <textarea name="alamat_pribadi" class="form-control" id="alamat_pribadi" cols="30" rows="10" required><?= $data_warung['alamat_warung'] ?></textarea>
+                                <textarea name="alamat_pribadi" class="form-control" id="alamat_pribadi" cols="30" rows="10" required></textarea>
                             </div>
+
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" readonly>
+                                <input type="email" name="email" id="inputEmail" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Username</label>
-                                <?php if (empty($data_warung['username'])) {
-                                    $username = "";
-                                } else {
-                                    $username = $data_warung['username'];
-                                } ?>
-                                <input type="email" name="username" id="username" class="form-control" value="<?= $username ?>" required="required">
+                                <input type="email" name="username" id="username" class="form-control" onchange="generatePass()" required="required">
                                 <div id="result"></div>
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
-                                <input type="password" name="password" class="form-control" id="myInput" value="<?= $data_warung['password'] ?>" required="required" readonly>
+                                <input type="password" name="password" class="form-control" id="myInput" required="required">
                                 <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password
                             </div>
 
+
+                            <div>
+                                <img src="../../assets/img/default.png" class="img-thumbnail img-preview-ktp" width="150px">
+                            </div>
                             <div class="form-group">
-                                <a href="#" data-toggle="modal" data-target="#ModalPassword">Ubah Password</a>
+                                <label for="">Foto KTP</label>
+                                <input type="file" name="foto_ktp" id="foto_ktp" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFotoKTP()">
+                            </div>
+
+                            <div>
+                                <img src="../../assets/img/default.png" class="img-thumbnail img-preview" width="150px">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Foto Depan Warung</label>
+                                <input type="file" name="foto_warung" id="foto" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFoto()">
                             </div>
 
 
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="<?= $data_warung['fotoktp'] ?>" class="img-thumbnail" width="550px">
-                                </div>
-                                <div class="col-lg-6">
-                                    <img src="<?= $data_warung['fotowarung'] ?>" class="img-thumbnail" width="550px">
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top: 10px;">
-                                <div class="col-lg-6">
-                                    <a href="#" data-toggle="modal" data-target="#ModalFotoKTP">Ubah Foto KTP</a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <a href="#" data-toggle="modal" data-target="#ModalFotoWarung">Ubah Foto Warung</a>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <button type="submit" class="btn btn-primary">Edit</button>
-                            <a class="btn btn-info" href="#">Kembali</a>
+                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="reset" class="btn btn-warning">Reset</button>
+                            <a class="btn btn-info" href="<?= site_url('C_Warung/') ?>">Kembali</a>
                             </form>
 
 
@@ -167,104 +153,6 @@
     </div>
     <!-- End of Page Wrapper -->
 
-
-    <!-- Modal Password -->
-    <div class="modal fade" id="ModalPassword" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Ubah Password</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-
-                    <?= form_open('C_Warung/edit_password') ?>
-                    <input type="hidden" name="id" value="<?= $id ?>" id="">
-                    <div class="form-group">
-                        <label for="">Masukkan Password Baru</label>
-                        <input type="password" name="password" id="pass" class="form-control">
-                        <input type="checkbox" onclick="myFunctionPass()" style="margin-top: 10px;"> Show Password
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Modal Foto KTP -->
-    <div class="modal fade" id="ModalFotoKTP" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Ubah Foto KTP</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-
-                    <?= form_open_multipart('C_Warung/edit_foto_ktp') ?>
-                    <input type="hidden" name="id" value="<?= $id ?>" id="">
-                    <input type="hidden" name="nama" value="<?= $data_warung['namapemilik'] ?>" id="">
-
-                    <div>
-                        <img src="<?= base_url() ?>assets/img/default.png" class="img-thumbnail img-preview-ktp" width="150px">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Foto KTP</label>
-                        <input type="file" name="foto_ktp" id="foto_ktp" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFotoKTP()">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Modal Foto Warung -->
-    <div class="modal fade" id="ModalFotoWarung" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Ubah Foto Warung</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-
-                    <?= form_open_multipart('C_Warung/edit_foto_warung') ?>
-                    <input type="hidden" name="id" value="<?= $id ?>" id="">
-                    <input type="hidden" name="nama" value="<?= $data_warung['namatoko'] ?>" id="">
-                    <div>
-                        <img src="<?= base_url() ?>assets/img/default.png" class="img-thumbnail img-preview" width="150px">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Foto Depan Warung</label>
-                        <input type="file" name="foto_warung" id="foto" class="form-control" required="required" accept="image/png, image/jpeg" onchange="prevFoto()">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -275,6 +163,34 @@
     <!-- file-js -->
     <?php $this->load->view('core/js'); ?>
     <script>
+        $(document).ready(function() {
+            $('#username').keyup(function() {
+                var uname = $('#username').val();
+                // var uname = uname + '@warung.com';
+                console.log(uname);
+
+                if (uname == 0) {
+                    $('#result').text('');
+                } else {
+                    $.ajax({
+                        url: '<?= base_url('C_Warung/check_email') ?>',
+                        type: 'POST',
+                        data: {
+                            "email": uname
+                        },
+                        success: function(hasil) {
+                            if (hasil == true) {
+                                $('#result').text('Username tersedia');
+                            } else {
+                                $('#result').text('Username tidak tersedia');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+
         function myFunction() {
             var x = document.getElementById("myInput");
             if (x.type === "password") {
@@ -284,13 +200,22 @@
             }
         }
 
-        function myFunctionPass() {
-            var x = document.getElementById("pass");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
+        function generatePass() {
+            var nama = document.getElementById("nama_pemilik").value;
+            var long = document.getElementById("long").value;
+
+
+            var _nama = nama.substring(0, 4);
+            var _long = long.substring(long.length - 4, long.length);
+            // var _imei = imei.substring(11, 15);
+
+            document.getElementById("myInput").value = _long + _nama;
+
+        }
+
+        function myKoordinat() {
+            document.getElementById("lat").value = -7.6414489;
+            document.getElementById("long").value = 112.698348;
         }
 
         function prevFotoKTP() {
