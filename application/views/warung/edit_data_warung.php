@@ -100,7 +100,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
-                                <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" readonly>
+                                <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Username</label>
