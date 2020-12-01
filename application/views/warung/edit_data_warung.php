@@ -103,6 +103,16 @@
                                 <input type="email" name="email" id="input" class="form-control" value="<?= $data_warung['email'] ?>" readonly>
                             </div>
                             <div class="form-group">
+                                <label for="">Username</label>
+                                <?php if (empty($data_warung['username'])) {
+                                    $username = "";
+                                } else {
+                                    $username = $data_warung['username'];
+                                } ?>
+                                <input type="email" name="username" id="username" class="form-control" value="<?= $username ?>" required="required">
+                                <div id="result"></div>
+                            </div>
+                            <div class="form-group">
                                 <label for="">Password</label>
                                 <input type="password" name="password" class="form-control" id="myInput" value="<?= $data_warung['password'] ?>" required="required" readonly>
                                 <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password

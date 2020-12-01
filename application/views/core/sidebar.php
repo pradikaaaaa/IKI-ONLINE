@@ -28,6 +28,11 @@
 
     <!-- Dataset -->
     <li class="nav-item">
+        <a class="nav-link pb-0" href="<?= site_url('C_Customer') ?>">
+            <i class="fas fa-user"></i>
+            <span>Customer</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link pb-0" href="<?= site_url('C_Ojek') ?>">
             <i class="fas fa fa-motorcycle"></i>
             <span>Ojek</span></a>
@@ -51,11 +56,11 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0 mt-3">
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link pb-0" href="<?= site_url('C_Aplikasi') ?>">
             <i class="fas fa-mobile-alt"></i>
             <span>Versi Aplikasi</span></a>
-    </li>
+    </li> -->
 
 
     <!-- Heading -->

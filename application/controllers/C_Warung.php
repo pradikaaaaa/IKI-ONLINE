@@ -50,7 +50,7 @@ class C_Warung extends CI_Controller
     public function add_data()
     {
 
-        $this->form_validation->set_rules('email', 'Email', 'callback_cek_email');
+        $this->form_validation->set_rules('username', 'Username', 'callback_cek_email');
         $this->form_validation->set_rules('password', 'Password', 'min_length[8]');
 
         //cek validasi
@@ -64,6 +64,7 @@ class C_Warung extends CI_Controller
             $no_hp_pemilik = $this->input->post('nohppribadi');
             $alamat_pemilik = $this->input->post('alamat_pribadi');
             $email = $this->input->post('email');
+            $username = $this->input->post('username');
             $pass = $this->input->post('password');
 
             $namawarung = $this->input->post('namawarung');
@@ -81,8 +82,8 @@ class C_Warung extends CI_Controller
             $bucket = $storage->getBucket();
 
             //buat user auth
-            $auth->createUserWithEmailAndPassword($email, $pass);
-            $getUser = $auth->getUserByEmail($email);
+            $auth->createUserWithEmailAndPassword($username, $pass);
+            $getUser = $auth->getUserByEmail($username);
             $idUser = $getUser->uid;
 
 
@@ -127,6 +128,7 @@ class C_Warung extends CI_Controller
                 'alamat_warung' => $alamat,
                 'alamat_pemilik' => $alamat_pemilik,
                 'email' => $email,
+                'username' => $username,
                 'kode_sales' => $sales,
                 'latitude' => $lat,
                 'longitude' => $long,
@@ -184,6 +186,7 @@ class C_Warung extends CI_Controller
         $no_hp_pemilik = $this->input->post('nohppribadi');
         $alamat_pemilik = $this->input->post('alamat_pribadi');
         $email = $this->input->post('email');
+        $username = $this->input->post('username');
 
         $namawarung = $this->input->post('namawarung');
         $nib = $this->input->post('nib');
@@ -194,11 +197,17 @@ class C_Warung extends CI_Controller
         $alamat_warung = $this->input->post('alamat_warung');
         $idUser = $this->input->post('id');
 
+
+
         $db  = $this->firebase->getDatabase();
+        $auth = $this->firebase->getAuth();
+        $auth->changeUserEmail($idUser, $username);
+
         $data = [
             'alamat_pemilik' => $alamat_pemilik,
             'alamat_warung' => $alamat_warung,
             'email' => $email,
+            'username' => $username,
             'kode_sales' => $sales,
             'latitude' => $lat,
             'longitude' => $long,
@@ -338,7 +347,11 @@ class C_Warung extends CI_Controller
 
         $ref = "Pandaan/Akun_Resto/" . $id;
 
-        $auth->deleteUser($id);
+        try {
+            $auth->deleteUser($id);
+        } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+        }
+
         $db->getReference($ref)->remove();
         $db->getReference('Pandaan/LokasiToko/' . $id)->remove();
         $db->getReference('Pandaan/Resto/' . $id)->remove();
@@ -353,11 +366,13 @@ class C_Warung extends CI_Controller
 
         $email_penerima = $this->input->post('email');
         $namawarung = $this->input->post('namawarung');
+        $username = $this->input->post('username');
         $subjek = 'Pendaftaran IKI Warung';
         $pass = $this->input->post('password');
 
+
         $data['nama'] = $namawarung;
-        $data['email'] = $email_penerima;
+        $data['email'] = $username;
         $data['password'] = $pass;
         $content = $this->load->view('content/body-email-warung', $data, true);
 
@@ -374,11 +389,23 @@ class C_Warung extends CI_Controller
 
     public function cek_email()
     {
-        $email = $this->input->post('email');
+        $email = $this->input->post('username');
         $auth = $this->firebase->getAuth();
         try {
             $cekEmail = $auth->getUserByEmail($email);
-            $this->form_validation->set_message('cek_email', 'Email sudah terdaftar');
+            $this->form_validation->set_message('cek_email', 'Username sudah terdaftar');
+            return false;
+        } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+            return true;
+        }
+    }
+
+    public function check_email()
+    {
+        $email = $this->input->post('email');
+        $auth = $this->firebase->getAuth();
+        try {
+            $auth->getUserByEmail($email);
             return false;
         } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
             return true;
