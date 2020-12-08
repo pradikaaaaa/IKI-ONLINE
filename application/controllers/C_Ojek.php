@@ -167,11 +167,12 @@ class C_Ojek extends CI_Controller
 
         $email_penerima = $this->input->post('email');
         $namadriver = $this->input->post('nama');
+        $username = $this->input->post('username');
         $subjek = 'Pendaftaran IKI Ojek';
         $pass = $this->input->post('password');
 
         $data['nama'] = $namadriver;
-        $data['email'] = $email_penerima;
+        $data['email'] = $username;
         $data['password'] = $pass;
         $content = $this->load->view('content/body-email-ojek', $data, true);
 
