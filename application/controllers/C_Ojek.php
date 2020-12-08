@@ -61,6 +61,7 @@ class C_Ojek extends CI_Controller
             $email = $this->input->post('email');
             $pass = $this->input->post('password');
             $jk = $this->input->post('jk');
+            $username = $this->input->post('username');
 
             $no_hp = $this->input->post('nohp');
             $motor = $this->input->post('motor');
@@ -72,9 +73,9 @@ class C_Ojek extends CI_Controller
             $storage = $this->firebase->getStorage();
             $bucket = $storage->getBucket();
 
-            $auth->createUserWithEmailAndPassword($email, $pass);
+            $auth->createUserWithEmailAndPassword($username, $pass);
 
-            $getUser = $auth->getUserByEmail($email);
+            $getUser = $auth->getUserByEmail($username);
             $idUser = $getUser->uid;
 
             $new_name = time() . $_FILES["foto_ojek"]['name'];
@@ -101,6 +102,7 @@ class C_Ojek extends CI_Controller
                 'jenis_kelamin' => $jk,
                 'notelp' => $no_hp,
                 'platnomor' => $plat,
+                'username' => $username,
                 'password' => $pass,
                 'point' => '0.0',
                 'rating' => '0.0',
