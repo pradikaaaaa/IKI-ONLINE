@@ -47,7 +47,7 @@ class C_Ojek extends CI_Controller
 
         $this->form_validation->set_rules('email', 'Email', 'callback_cek_email');
         $this->form_validation->set_rules('password', 'Password', 'min_length[8]');
-        $this->form_validation->set_rules('nohp', 'Nomor HP', 'min_length[11]|max_length[12]');
+        // $this->form_validation->set_rules('nohp', 'Nomor HP', 'min_length[11]|max_length[12]');
 
 
         //cek validasi
