@@ -391,7 +391,11 @@
 
                 <tr>
                     <td class="bg_white" style="padding: 0 0 4em 0;">
-                        <p style="text-align:center"><img src="https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/Email%2Funduh_.png?alt=media&token=" style="width:200px"><br><i>Unduh Aplikasi di Playstore</i></p>
+                        <p style="text-align:center">
+                            <a href="https://play.google.com/store/apps/details?id=com.alfanshter.ikiojek">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/ikijekpandaan-3bb02.appspot.com/o/Email%2Funduh_.png?alt=media&token=" style="width:200px">
+                            </a>
+                            <br><i>Unduh Aplikasi di Playstore</i></p>
                     </td>
                 </tr>
                 <!-- end tr -->
