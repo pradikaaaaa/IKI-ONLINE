@@ -76,7 +76,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Username</label>
-                                <input type="username" name="email" id="input" onchange="generatePass()" class="form-control" required="required">
+                                <input type="email" name="username" id="input" onchange="generatePass()" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
